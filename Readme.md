@@ -53,3 +53,134 @@ SkillFactory получила заказ от Федерации Спортив�
 
 Дополнительная задача «со звёздочкой». Публикация своего решения на хостинге
 В качестве хостинга выбран pythonanywhere.com - Alroger.pythonanywhere.com
+
+
+Метод GET /submitData/
+Этот метод получает одну запись (перевал) по её id с выведением всей информацию об перевале, в том числе статус модерации.
+Пример JSON: 
+
+HTTP 200 OK
+Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+{
+    "id": 3,
+    "user": {
+        "email": "alex.botlanda@mail.ru",
+        "phone": "+79524397035",
+        "last_name": "Botlanda",
+        "name": "Alex",
+        "otc": "-"
+    },
+    "beauty_title": "Бивачный",
+    "title": "Главный хребет Заилийского Алатау",
+    "other_titles": "Ленинградский",
+    "connect": "",
+    "coords": {
+        "latitude": 43.078256,
+        "longitude": 77.309239,
+        "height": 4250
+    },
+    "level": {
+        "winter": "2b",
+        "summer": "2a",
+        "autumn": "2a",
+        "spring": "2a"
+    },
+    "photo": [
+        {
+            "data": "https://pereval.online/imagecache/original/caubasephotos2.narod.ru--photos2--cau_11214_ln.jpg",
+            "title": "Перевал Бивачный"
+        }
+    ],
+    "status": "new"
+}
+
+
+Метод GET+email /submitData/?user_email=email
+Возвращает данные всех объектов, отправленных на сервер пользователем с почтой email. Пример запроса:
+
+GET /submitData/pass/?user__email=note.lovar%40mail.ru
+
+Пример JSON:
+
+
+
+HTTP 200 OK
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
+[
+    {
+        "id": 1,
+        "user": {
+            "email": "note.lovar@mail.ru",
+            "phone": "+79613491256",
+            "last_name": "Lovar",
+            "name": "Note",
+            "otc": "ogly"
+        },
+        "beauty_title": "Шаумянский",
+        "title": "Ставропольский/Краснодарский край",
+        "other_titles": "Дорога Хадыженск - Туапсе",
+        "connect": "",
+        "coords": {
+            "latitude": 44.347,
+            "longitude": 39.296,
+            "height": 512
+        },
+        "level": {
+            "winter": "1a",
+            "summer": "1a",
+            "autumn": "1a",
+            "spring": "1a"
+        },
+        "photo": [
+            {
+                "data": "https://celes.club/uploads/posts/2022-09/1662244680_13-celes-club-p-shaumyanskii-pereval-vkontakte-14.jpg",
+                "title": "Шаумянский перевал"
+            }
+        ],
+        "status": "new"
+    },
+    {
+        "id": 2,
+        "user": {
+            "email": "note.lovar@mail.ru",
+            "phone": "+79613491256",
+            "last_name": "Lovar",
+            "name": "Note",
+            "otc": "ogly"
+        },
+        "beauty_title": "Купол",
+        "title": "р.Джело - р.Актру. Через плато в.Купол",
+        "other_titles": "Купол трех озер",
+        "connect": "",
+        "coords": {
+            "latitude": 50.04758,
+            "longitude": 87.78233,
+            "height": 3527
+        },
+        "level": {
+            "winter": "1b",
+            "summer": null,
+            "autumn": null,
+            "spring": null
+        },
+        "photo": [
+            {
+                "data": "https://pereval.online/imagecache/original/object/images/2019/12/05/ee65e8-28.jpg",
+                "title": "Перевал Купол"
+            }
+        ],
+        "status": "new"
+    }
+]
+
+
+
+
+
+
