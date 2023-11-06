@@ -106,38 +106,17 @@ Vary: Accept
 
 Пример JSON:
 
+HTTP 200 OK
+Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+Content-Type: application/json
+Vary: Accept
+
 {
-    "id": 2,
-    "user": {
-        "email": "note.lovar@mail.ru",
-        "phone": "+79613491256",
-        "last_name": "Lovar",
-        "name": "Note",
-        "otc": "ogly"
-    },
-    "beauty_title": "Купол",
-    "title": "р.Джело - р.Актру. Через плато в.Купол",
-    "other_titles": "Купол трех озер - новое название",
-    "connect": "",
-    "coords": {
-        "latitude": 50.04758,
-        "longitude": 87.78233,
-        "height": 3527
-    },
-    "level": {
-        "winter": "1b",
-        "summer": null,
-        "autumn": null,
-        "spring": null
-    },
-    "photo": [
-        {
-            "data": "https://pereval.online/imagecache/original/object/images/2019/12/05/ee65e8-28.jpg",
-            "title": "Перевал Купол"
-        }
-    ],
-    "status": "new"
+    "state": "1",
+    "message": "Изменения внесены успешно"
 }
+
+
 
 
 
