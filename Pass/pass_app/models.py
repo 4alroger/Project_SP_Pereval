@@ -86,7 +86,8 @@ class Mount(models.Model):
 
 class Photo(models.Model):
     mount = models.ForeignKey(Mount, related_name='photo', on_delete=models.CASCADE)
-    data = models.URLField(verbose_name='Изображение', null=True, blank=True)
+    #data = models.URLField(verbose_name='Изображение', null=True, blank=True)
+    data = models.ImageField(verbose_name='Изображение', null=True, blank=True)
     title = models.CharField(max_length=255, verbose_name='Название')
 
     def __str__(self):
